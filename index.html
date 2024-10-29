@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heheha</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #game-container{
+            background-image: linear-gradient(rgb(233, 179, 187), rgb(217, 217, 155)); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 900px;
+            height: 600px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            overflow: hidden;
+        }
+        #target{
+            background-color: blueviolet;
+            border: none;
+            width: 90px;
+            border-radius: 10px;
+            font-size: 25px;
+            padding: 8px;
+            cursor: pointer;
+            transition: top 0.5s, left 0.5s;
+            position: absolute;
+            left: 500px;
+        }
+        #yes{
+            background-color: rgb(226, 43, 43);
+            border: none;
+            width: 90px;
+            border-radius: 10px;
+            font-size: 25px;
+            padding: 8px;
+            cursor: pointer;
+            transition: top 0.5s, left 0.5s;
+        }
+        @media screen and (max-width:400px) {
+            #target{
+                left : 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="box">
+            <h1>Do You Love me?💓</h1>
+            <button id="target">No</button>
+            <button id="yes">Yes</button>
+        </div>
+    </div>
+    <script>
+        const target = document.getElementById('target')
+        const yes = document.getElementById('yes')
+        function movetarget(){
+            const maxW = 400;
+            const maxH = 400;
+            const randomX = Math.floor(Math.random()*maxW)
+            const randomY = Math.floor(Math.random()*maxH)
+            target.style.left = randomX + "px"
+            target.style.top = randomY + "px"
+        }
+        target.addEventListener('click',function(){
+            movetarget();
+        })
+        yes.addEventListener('click',function(){
+            alert("Thank You so much😍 love you too💞")
+        })
+    </script>
+</body>
+</html>
